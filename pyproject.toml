@@ -11,7 +11,7 @@ requires-python = ">=3.9"
 license = "GPL-3.0-only"
 keywords = []
 authors = [
-    { name = "berkay", email = "66202981+berkay-yalin@users.noreply.github.com" },
+    { name = "ostromia", email = "66202981+ostromia@users.noreply.github.com" },
 ]
 classifiers = [
     "Development Status :: 4 - Beta",
@@ -27,7 +27,7 @@ classifiers = [
 dependencies = []
 
 [project.urls]
-Documentation = "https://github.com/berkay-yalin/promethium#readme"
+Documentation = "https://github.com/ostromia/promethium/wiki/Documentation"
 Issues = "https://github.com/berkay-yalin/promethium/issues"
 Source = "https://github.com/berkay-yalin/promethium"
 
