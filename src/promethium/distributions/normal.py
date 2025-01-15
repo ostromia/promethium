@@ -1,5 +1,5 @@
 from typing import Union, Any
-from math import erf, exp, sqrt, tau
+from math import erfc, exp, sqrt, tau, nan
 from statistics import _normal_dist_inv_cdf #type:ignore
 
 
@@ -21,7 +21,13 @@ def pdf(x: Union[int, float], mu: Union[int, float], sigma: Union[int, float]) -
 
 
 def cdf_calculate(x: float, mu: float, sigma: float) -> float:
-    return 0.5 * (1.0 + erf((x - mu) / (sigma * sqrt(2.0))))
+    if sigma < 0:
+        return nan
+
+    if sigma == 0.0:
+        return 0.0 if x < mu else 1.0
+
+    return 0.5 * erfc( -(x - mu) / (sigma * sqrt(2.0)) )
 
 def cdf(x: Union[int, float], mu: Union[int, float], sigma: Union[int, float]) -> float:
     pdf_validate(x, sigma, mu)
